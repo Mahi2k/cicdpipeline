@@ -36,11 +36,10 @@ if response.status_code == 200:
     # for commit in commits:
     firstCommit = commits[0]
     latest_commit_id = firstCommit["sha"]
-    print(latest_commit_id)
     
     previousCommitId = readCommitId()
-    print("Prev",previousCommitId)
-    print("First", firstCommit)
+    print("OLD: ",previousCommitId)
+    print("LATEST: ",latest_commit_id)
     if(previousCommitId != latest_commit_id):
        writeCommitId(latest_commit_id)
     
