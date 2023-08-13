@@ -2,7 +2,7 @@ import requests
 
 # Replace these with your own values
 github_username = "Mahi2k"
-github_token = "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"
+github_token = "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"
 repository_owner = "Mahi2k"
 repository_name = "cicdpipeline"
 
@@ -42,6 +42,7 @@ if response.status_code == 200:
     print("Prev",previousCommitId)
     print("First", firstCommit)
     if(previousCommitId != latest_commit_id):
-       writeCommitId(latest_commit_id) 
+       writeCommitId(latest_commit_id)
+    
 else:
     print("Request failed with status code:", response.status_code)
