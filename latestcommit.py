@@ -1,10 +1,15 @@
-import requests
+import requests, os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Replace these with your own values
-github_username = "Mahi2k"
-github_token = "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"
-repository_owner = "Mahi2k"
-repository_name = "cicdpipeline"
+github_username = os.getenv('github_username')
+github_token = os.getenv('github_token')
+repository_owner = os.getenv('repository_owner')
+repository_name = os.getenv('repository_name')
+
+print("github_token",github_token)
 
 # URL to the GitHub API endpoint for commits
 url = f"https://api.github.com/repos/{repository_owner}/{repository_name}/commits"
