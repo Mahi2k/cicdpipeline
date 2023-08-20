@@ -5,20 +5,11 @@ load_dotenv()
 
 # Replace these with your own values
 github_username = os.getenv('github_username')
-github_token = os.getenv('github_token')
 repository_owner = os.getenv('repository_owner')
 repository_name = os.getenv('repository_name')
 
-print("github_token",github_token)
-
 # URL to the GitHub API endpoint for commits
 url = f"https://api.github.com/repos/{repository_owner}/{repository_name}/commits"
-
-# Set up authentication headers
-headers = {
-    "Authorization": f"Bearer {github_token}",
-    "User-Agent": "Python GitHub API Client"
-}
 
 old_commitId = ""
 
@@ -34,7 +25,7 @@ def readCommitId():
     return commitId
 
 # Make a GET request to the API
-response = requests.get(url, headers=headers)
+response = requests.get(url)
 # Check if the request was successful
 if response.status_code == 200:
     commits = response.json()  # Parse JSON from the response
