@@ -24,3 +24,5 @@
     
 3. Reload the NGINX server by using the command in script
     - `systemctl reload NGINX`
+
+-----------------------------------------------------------------------------------------------------------------------------
